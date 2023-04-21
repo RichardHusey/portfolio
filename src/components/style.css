@@ -1,0 +1,5 @@
+.rh-circle{
+  border: 1px solid blueviolet;
+  border-radius: 50%;
+  filter: sepia(02) saturate(0.5);
+}
