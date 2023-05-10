@@ -8,7 +8,7 @@ This exercise should take approximately one hour to complete.
 
 Good luck!
 
-Question 1
+**Question 1**
 You've been tasked with identifying a string that contains the word "superman" (case insensitive). You've written the following code:
 
 function validateString(str) {
@@ -18,15 +18,15 @@ function validateString(str) {
 }
 QA has come to you and said that this works great for strings like "I love superman", but an exception is generated for strings like "Superman is awesome!", which should not happen. Explain why this occurs, and show how you would solve this issue (you must use indexOf() in your answer).
 
-Question 2
+**Question 2**
 You're given a sorted index array that contains no keys. The array contains only integers, and your task is to identify whether or not the integer you're looking for is in the array. Write a function that searches for the integer and returns true or false based on whether the integer is present. Describe how you arrived at your solution.
 
-Question 3
+**Question 3**
 Write a function that takes a phone number in any form and formats it using a delimiter supplied by the developer. The delimiter is optional; if one is not supplied, use a dash (-). Your function should accept a phone number in any format (e.g. 123-456-7890, (123) 456-7890, 1234567890, etc) and format it according to the 3-3-4 US block standard, using the delimiter specified. Assume foreign phone numbers and country codes are out of scope.
 
 Note: This question CAN be solved using a regular expression, but one is not REQUIRED as a solution. Focus instead on cleanliness and effectiveness of the code, and take into account phone numbers that may not pass a sanity check.
 
-Question 4
+**Question 4**
 Write a complete set of unit tests for the following code:
 
 function fizzBuzz(start = 1, stop = 100)
@@ -58,12 +58,12 @@ function fizzBuzz(start = 1, stop = 100)
     
     return result;
 }
-Question 5
+**Question 5**
 Write a function that would generate a hex color code (#f1f2f3) from the full name of a person. It should always generate the same color for a given name. Describe how you arrived at your solution.
 
 const name = 'John Doe';
 const color = getColorFromName(name); // e.g. #9bc44c
-Question 6
+**Question 6**
 Considering the following ES5 code in a page that has ten buttons:
 
 (function(){
@@ -75,7 +75,7 @@ Considering the following ES5 code in a page that has ten buttons:
 })();
 What is the bug in this code? Explain how to fix it in plain ES5.
 
-Question 7
+**Question 7**
 Write a function that determines if a given argument is array-like, in the sense that it is iterable.
 
 isIterable(null); // false
@@ -85,7 +85,7 @@ isIterable(document.querySelectorAll('.error-message')); // true
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Question 1.
+**Question 1.**
 The code is using indexOf to check if 'superman' appears in the string, but it is not using an exact match. The indexOf() function is case sensitive, so in the example "Superman is awesome!" the indexOf() function will return -1 because it is looking for "superman" and not "Superman".
 
 To solve this issue, the code can be updated to use the .includes() method instead of .indexOf(). The .includes() method is case insensitive and will return true if the specified string is found, regardless of the case.
@@ -95,7 +95,7 @@ if (!str.toLowerCase().includes('superman')) {
 throw new Error('String does not contain superman');
 }
 }
-Question 2.
+**Question 2.**
 // My solution uses a binary search algorithm to search for the target integer. Binary search is an efficient search algorithm that works by repeatedly dividing the search interval in half until the target value is found.
 
 // To use binary search, the array must be sorted. The function first checks to see if the array is sorted. If the array is not sorted, it returns false. If the array is sorted, the function then checks the middle element of the array. If the middle element is equal to the target value, the function returns true. Otherwise, if the target value is less than the middle element, the function searches the left side of the array, and if the target value is greater than the middle element, the function searches the right side of the array. This process is repeated until the target value is found or the search interval is empty.
@@ -124,7 +124,7 @@ else right = mid - 1;
 
 return false;
 }
-Question 3.
+**Question 3.**
 function formatPhoneNumber(phoneNumber, delimiter = "-") {
 // Strip out all non-numeric values from the phoneNumber string
 const onlyNumbers = phoneNumber.replace(/\D/g, "");
@@ -151,7 +151,7 @@ formattedNumber = ${areaCode}${delimiter}${prefix}${delimiter}${lineNumber};
 
 return formattedNumber;
 }
-Question 4.
+**Question 4.**
 // Test 1: Pass valid arguments
 test('fizzBuzz should return the correct result when valid arguments are passed', () => {
 expect(fizzBuzz(1, 15)).toBe('12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz');
@@ -176,7 +176,7 @@ expect(() => { fizzBuzz(15, 1); }).toThrow('Invalid arguments');
 test('fizzBuzz should return the correct result when the start argument is not provided', () => {
 expect(fizzBuzz(undefined, 15)).toBe('12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz');
 });
-Question 5.
+**Question 5.**
 function getColorFromName(name) {
 // create a variable to store the hex code
 let hexCode = "#";
@@ -236,7 +236,7 @@ console.log('Line %s', i);
 })(i);
 }
 })();
-Question 7.
+**Question 7.**
 function isIterable(arg) {
 return arg && typeof arg[Symbol.iterator] === 'function';
 }
